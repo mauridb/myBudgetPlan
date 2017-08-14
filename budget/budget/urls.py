@@ -18,6 +18,6 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^budget/', include('planning.urls')),
+    url(r'^', include('planning.urls')),
 
 ]

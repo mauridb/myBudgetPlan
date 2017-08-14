@@ -1,0 +1,22 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+.header-no-padding{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+a:visited {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+    color: white;
+}
+a:link {
+    text-decoration: none;
+}
+
+.input-50-perc{
+    width: 50%;
+}
