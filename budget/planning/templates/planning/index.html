@@ -1,5 +1,5 @@
 {% extends 'planning/base.html' %}
-
+{% load static %}
 
 {% block header %}
 <nav class="navbar navbar-inverse">
@@ -27,29 +27,29 @@
     <div class="row">
         <form action="#" method="post" class="form-group">
 
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-8 col-md-offset-2 margin-top-15">
                 <p><b>Macro category</b></p>
                 <select class="form-control input-50-perc" name="macroarea">
                     <option selected disabled>-- choose category --</option>
-                    {% for model in macrocategory%}
+                    {% for model in list_macrocategory%}
                     <option value="{{ model }}">{{model}}</option>
                     {% endfor %}
                 </select>
             </div>
-            <br />
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-8 col-md-offset-2 margin-top-15">
                 <p><b>Sub Category</b></p>
                 <select class="form-control input-50-perc" name="macroarea">
                     <option selected disabled>-- choose sub category --</option>
+                    {% for model in list_subcategory%}
+                    <option value="{{ model }}">{{model}}</option>
+                    {% endfor %}
                 </select>
             </div>
-            <br />
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-8 col-md-offset-2 margin-top-15">
                 <p><b>Price</b></p>
                 <input class="form-control input-50-perc" type="number" name="price" placeholder="Insert price .." min="0">
             </div>
-            <br />
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-8 col-md-offset-2 margin-top-15">
                 <input class="btn btn-success" type="submit" value="Add">
                 <input class="btn btn-danger" type="reset" value="Reset">
             </div>
@@ -63,7 +63,7 @@
       <div class="col-sm-4 col-md-4">
         <div class="thumbnail">
           <div class="caption">
-            <h4 class="text-primary">TOTAL AMOUNT</h4>
+            <h4 class="text-success">AMOUNT OF MONTH</h4>
             <a class="btn btn-success btn-lg">{{ amount.total }}</a>
           </div>
         </div>
@@ -71,7 +71,7 @@
       <div class="col-sm-4 col-md-4">
         <div class="thumbnail">
           <div class="caption">
-            <h4 class="text-primary">LAST COST</h4>
+            <h4 class="text-info">LAST COST</h4>
             <a class="btn btn-info btn-lg">{{ amount.total }}</a>
           </div>
         </div>
@@ -79,7 +79,7 @@
       <div class="col-sm-4 col-md-4">
         <div class="thumbnail">
           <div class="caption">
-            <h4 class="text-primary">AMOUNT AVAILABLE</h4>
+            <h4 class="text-warning">AMOUNT AVAILABLE</h4>
             <a class="btn btn-warning btn-lg">{{ amount.totalVariable }}</a>
           </div>
         </div>
